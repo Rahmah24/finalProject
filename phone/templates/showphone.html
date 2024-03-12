@@ -1,0 +1,78 @@
+
+{% extends "base.html" %}
+
+{%block content %}
+
+<style>
+    *{
+         font-family:cairo;
+    }
+    a{
+        color:#000101;
+        text-decoration:none;
+    }
+  
+    </style>
+<body style="background-image:())">
+
+<div class="container ">
+    {% for item in phone  %}
+
+
+
+
+
+    <div class="row mt-5 d-flex justify-content-center text-center ">
+    
+        <div class="col-sm-8">
+    
+            <div class="card ">
+                <div class="card-body">
+                    <div class="row ">
+                        <div class="col-sm-3">
+                            
+                            <img src="../static/images/{{item.image}}" class="rounded float-start" width="200" height="300" class="img-thumbnail">
+                        
+                            </div>
+                        <div class="col-sm-9">
+                            <ul class="list-unstyled text-start ">
+                            <li><h4 class="alert alert-secondary ">{{item.itemsid.name}}</h4></li>
+                            <li><h4 class="alert alert-secondary ">{{item.price}}</h4></li>
+                            <li><h4 class="alert alert-secondary ">{{item.color}}</h4></li>
+
+                            </ul>
+    
+                        </div>
+
+
+
+                    </div>
+                    
+
+                    <div class="row ">
+                        <div class="col-sm-12">
+                            <a href="{% url 'details' id=item.id  %}" class="btn btn-primary">عرض تفاصيل المنتج</a>
+                        </div>
+  
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+</body>
+
+
+{% endblock %}
